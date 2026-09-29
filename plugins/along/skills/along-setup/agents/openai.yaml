@@ -1,0 +1,7 @@
+interface:
+  display_name: "Along Setup"
+  short_description: "Set up Along and inventory your app"
+  default_prompt: "Use $along-setup to set up Along's household profile and finance-app account inventory."
+
+policy:
+  allow_implicit_invocation: false

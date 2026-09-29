@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "host": "codex-desktop",
+  "setup": {
+    "invocation": "$along-setup",
+    "user_only": true
+  },
+  "runtime": {
+    "file_read": {"status": "passed", "tools": ["exec_command"]},
+    "ui_read": {"status": "unknown", "tools": ["mcp__cua_repl"]},
+    "ui_write": {"status": "unknown", "tools": ["mcp__cua_repl"]},
+    "connector_read": {"status": "unknown", "tools": []},
+    "python3_10": {"status": "passed", "tools": ["python3"]},
+    "scheduler": {"status": "unknown", "tools": []}
+  }
+}

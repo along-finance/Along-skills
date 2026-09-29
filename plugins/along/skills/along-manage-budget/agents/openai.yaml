@@ -1,0 +1,4 @@
+interface:
+  display_name: "Along Budgets & Goals"
+  short_description: "Review budgets, rollovers and goal funding"
+  default_prompt: "Use $along-manage-budget to review this period's budget and goal funding, then prepare any needed changes."

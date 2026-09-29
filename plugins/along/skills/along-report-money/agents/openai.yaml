@@ -1,0 +1,4 @@
+interface:
+  display_name: "Along Money Reports"
+  short_description: "Explain spending and cash changes over time"
+  default_prompt: "Use $along-report-money to explain how my spending and cash balances changed last month."

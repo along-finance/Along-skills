@@ -1,0 +1,20 @@
+{
+  "name": "along",
+  "interface": {
+    "displayName": "Along"
+  },
+  "plugins": [
+    {
+      "name": "along",
+      "source": {
+        "source": "local",
+        "path": "./plugins/along"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

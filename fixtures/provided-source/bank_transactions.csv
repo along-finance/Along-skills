@@ -1,0 +1,7 @@
+source_id,account_id,date,status,amount,currency,merchant,transaction_group,duplicate_ordinal
+bank-coffee-1,checking-001,2026-09-10,posted,-12.34,USD,Coffee House,coffee-duplicates,1
+bank-coffee-2,checking-001,2026-09-10,posted,-12.34,USD,Coffee House,coffee-duplicates,2
+bank-missing-app,checking-001,2026-09-11,posted,-80.00,USD,Utility Co,utility-missing,1
+bank-internet-pending,checking-001,2026-09-12,pending,-45.00,USD,Internet Co,internet-cycle,1
+bank-internet-posted,checking-001,2026-09-13,posted,-45.00,USD,Internet Co,internet-cycle,1
+bank-home-store,checking-001,2026-09-20,posted,-100.00,USD,Home Store,home-split,1

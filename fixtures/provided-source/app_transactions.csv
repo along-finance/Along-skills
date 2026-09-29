@@ -1,0 +1,8 @@
+app_id,account_id,date,status,amount,currency,merchant,transaction_group,row_type,parent_id,duplicate_ordinal
+app-coffee-1,checking-001,2026-09-10,posted,-12.34,USD,Coffee House,coffee-duplicates,transaction,,1
+app-coffee-2,checking-001,2026-09-10,posted,-12.34,USD,Coffee House,coffee-duplicates,transaction,,2
+app-unmatched,checking-001,2026-09-11,posted,-22.00,USD,Unknown Merchant,app-only,transaction,,1
+app-internet-posted,checking-001,2026-09-13,posted,-45.00,USD,Internet Co,internet-cycle,transaction,,1
+app-home-parent,checking-001,2026-09-20,posted,-100.00,USD,Home Store,home-split,split_parent,,1
+app-home-kitchen,checking-001,2026-09-20,posted,-60.00,USD,Home Store,home-split,split_child,app-home-parent,1
+app-home-supplies,checking-001,2026-09-20,posted,-40.00,USD,Home Store,home-split,split_child,app-home-parent,2

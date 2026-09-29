@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "basis": "provided-source",
+  "currency_exponents": {
+    "USD": 2
+  },
+  "coverage": {
+    "requested_interval": {
+      "start": "2026-09-01",
+      "end": "2026-09-30"
+    },
+    "declared_source_interval": {
+      "start": "2026-09-01",
+      "end": "2026-09-30"
+    },
+    "observed_bank_row_span": {
+      "start": "2026-09-10",
+      "end": "2026-09-20"
+    },
+    "observed_app_row_span": {
+      "start": "2026-09-10",
+      "end": "2026-09-20"
+    },
+    "interpretation": "Observed row dates do not prove that the requested interval is complete."
+  },
+  "duplicate_groups": [
+    {
+      "name": "two-real-coffee-purchases",
+      "source_ids": ["bank-coffee-1", "bank-coffee-2"],
+      "app_ids": ["app-coffee-1", "app-coffee-2"]
+    }
+  ],
+  "matches": [
+    {
+      "case_id": "coffee-purchase-one",
+      "source_id": "bank-coffee-1",
+      "app_id": "app-coffee-1"
+    },
+    {
+      "case_id": "coffee-purchase-two",
+      "source_id": "bank-coffee-2",
+      "app_id": "app-coffee-2"
+    },
+    {
+      "case_id": "posted-internet-charge",
+      "source_id": "bank-internet-posted",
+      "app_id": "app-internet-posted"
+    },
+    {
+      "case_id": "home-store-parent",
+      "source_id": "bank-home-store",
+      "app_id": "app-home-parent"
+    }
+  ],
+  "source_only": ["bank-missing-app"],
+  "app_unmatched": ["app-unmatched"],
+  "pending_replacements": [
+    {
+      "pending_source_id": "bank-internet-pending",
+      "posted_source_id": "bank-internet-posted",
+      "app_id": "app-internet-posted"
+    }
+  ],
+  "splits": [
+    {
+      "source_id": "bank-home-store",
+      "parent_app_id": "app-home-parent",
+      "children": ["app-home-kitchen", "app-home-supplies"]
+    }
+  ],
+  "summary": {
+    "bank_rows": 6,
+    "app_rows": 7,
+    "matched_pairs": 4,
+    "source_only": 1,
+    "app_unmatched": 1,
+    "pending_replacements": 1,
+    "split_children": 2
+  }
+}

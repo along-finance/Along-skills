@@ -1,0 +1,4 @@
+interface:
+  display_name: "Along Cash Planning"
+  short_description: "Plan bills and cash between paydays"
+  default_prompt: "Use $along-plan-cash to check whether my checking account can cover upcoming bills before my next paycheck."

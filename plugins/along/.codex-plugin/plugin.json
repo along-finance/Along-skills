@@ -1,0 +1,23 @@
+{
+  "name": "along",
+  "version": "0.1.0",
+  "description": "Household finance workflows for account sync, reconciliation, transaction review, budgets, cash planning, and reports.",
+  "author": {
+    "name": "Along contributors"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Along",
+    "shortDescription": "Manage household finance workflows with Along.",
+    "longDescription": "Eight coordinated skills with explicit household setup, scoped account sync, evidence-based reconciliation, and private household records. Live access requires supported host tools and account authorization.",
+    "developerName": "Along contributors",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Show my Along status.",
+      "Reconcile this account for last month.",
+      "Can this account cover bills until payday?"
+    ]
+  },
+  "license": "MIT"
+}

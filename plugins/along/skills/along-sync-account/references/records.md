@@ -1,0 +1,57 @@
+# Private records and continuity
+
+Use one explicitly selected private root per household, outside the skill bundle. The app remains the household ledger. Along stores source evidence, scoped choices, unresolved work and execution history, not a competing master ledger. Create records only when needed; inline supplied-file analysis does not require a household database. Persistent household profile creation belongs to the explicit Along setup command; other workflows use an existing profile or keep standalone outputs in the task workspace.
+
+## Identity, compatibility and persistence
+
+Use opaque stable household, account, case, obligation and run IDs. Runs use a UTC timestamp plus random suffix. Follow saved `accounts.json.storagePath` after renames; sanitize paths, resolve symlinks and contain new files beneath the private root. External legacy references remain explicitly recorded, read-only inputs. A physical account may have several app mappings: count it once in household totals, and label separate app representations. Masked suffixes alone cannot establish identity.
+
+Keep existing storage and schemaVersion 1 records readable; add optional fields rather than migrating on read. Preserve unknown fields and historical values. Missing differs from zero or healthy. Legacy `feedResponsibility`, `validate`, or `approved` retain provenance and do not establish verified feed handoff or fresh authorization. New fields below use schemaVersion 1. A later breaking migration needs a separate backed-up plan.
+
+Write evidence and run details before appending their references to indexes. Use atomic file replacement and a real single writer for shared records; atomic replacement alone does not prevent lost updates. Preserve previous versions and explicit supersedes references. Each saved operational run has a concise `SUMMARY.md` and `verification.json` describing performed checks (method, expected, observed, result, evidence); never create empty checks or generic success records.
+
+## Existing core layout
+
+- `household.json`: householdId, app/workspace identity, timezone, reporting currency, access references, storage/retention choice, preferences, created/updated times. Secrets remain provider references only.
+- `accounts.json`: physical account identity, institution, owners or unknown, currency/type, stable storagePath, app mapping(s), feedOwner and handoff evidence, observation references. Distinguish account owner, transaction owner, allocated cost share and review assignee.
+- `connections/<connectionId>.json`: official route, credential reference, observed source identity/mapping/capabilities, timestamps, and shared connector ID/sibling accounts when applicable. Track requested takeover scope and verified feed deactivation separately.
+- `syncs/<runId>/`: source/app identity, requested interval, fetched coverage, baseline, operation/proposal/journal references, verified applied changes, unresolved rows and linked reconciliation result. `syncs/checkpoints.json` records per-account verified imported coverage and source/app observation times, not merely the last attempted run. Retain late/replacement cases across checkpoints. Connection readiness and successful sync are separate.
+- `inventory/<runId>.json`, `status/<runId>.json`: dated derived views. Retain independent `lastLoginObservedAt`, `connectionTestedAt`, `appInspectedAt`, `balanceObservedAt` with source as-of, `evidenceRetrievedAt`, `transactionCoverage`, and `reconciledAt`. One fresh observation does not refresh the others.
+- `app-knowledge/<runId>.json`: private app/workspace applicability, observed settings, documented rules with source URLs/retrieval dates, capability states, live evidence and contradictions. `household.json.appKnowledgeRef` points to the applicable record. Reuse the package's dated public Monarch reference; store private differences here, not in the public skill. Old combined documentation maps remain valid dated inputs.
+- `institutions/<institutionId>/accounts/<accountId>/`: immutable `evidence/<runId>/raw/`, connection/reconciliation/receipt runs and their details. Preserve existing paths.
+- `evidence/index.json`: manifests with validated coverage and supersession. A file index does not prove completeness.
+- `reconciliations/<runId>/`: household-period result and account-result index, selected/required checks, cross-account pairs, proposal/journal references and aggregate outcome. Keep account evidence in its existing locations; a resumed or superseding run references earlier results without upgrading their scope.
+
+Every run records schemaVersion, runId, household/account IDs, mode, requested scope/period, actual coverage, startedAt/observedAt, outcome, evidenceRefs and remaining work. Live runs record `runtimeCheck` with tool/provider, target workspace, time, toolAccess/appAccess (`passed`, `blocked`, `unknown`), evidence and blocker. Connection health and financial-write permission are separate. Reconciliation runs record `basis` (`app-only`, `provided-source`, `one-off-source`, or `along-source`) and required/performed checks; app-only results mark bank completeness and bank balance agreement unverified, not passed.
+
+## Evidence and transaction identity
+
+Raw evidence is immutable; normalized data is derived and versioned with its parse method, input hashes, row provenance and validation results. An unresolved amount, sign, date, currency or identity can be reported but cannot support a dependent financial mutation. A manifest records account/source identity, method, retrieval time, source timezone, requested/actual intervals and gaps, pending/posted coverage, balance types/as-of, files with relative path/SHA-256/MIME/source URL without auth parameters, validations and overlaps/supersedes. Hashes establish byte integrity, not accuracy. Reuse only intact evidence fit for the requested as-of; open-cycle activity and current balances need fresh observations, while unrevised closed statements may be reused.
+
+Normalized rows preserve source IDs or fingerprint plus duplicate ordinal, original description/values, integer minor-unit amount, currency and exponent, debit/credit direction and sign convention, posted/effective dates, status and file/page/row provenance. Preserve source rows, app parent IDs, child IDs and verified correspondence separately. Count source parents once for account totals and allocation children once for category totals. Equal purchases may be legitimate; pending/posted replacements are relationships, not automatic duplicate deletions.
+
+Payment pairs record both accounts/transaction IDs (null when absent), signed amounts/currencies, each source date, settlement window, one-to-one or evidenced grouped allocation, match basis/confidence, source disposition and independent native-link status. A matched source pair is not proof of native linking or expense recognition.
+
+Reconciliation results preserve separate coverage, transaction, balance, category and counterpart outcomes, proposals/journals, differences and next steps. Authorization records bind user/message/time to the exact operation or proposal version/digest, before-snapshot and change IDs. Journals follow [changes](changes.md); saved permission caches cannot expand current scope.
+
+## Household choices and open work
+
+Use these additions only when a workflow needs continuity:
+
+| Record | Minimum decision-relevant fields |
+|---|---|
+| `preferences.json` | Stable preference ID; kind (category convention, reserve, cost allocation, budget policy, access route); value; account/merchant/member/period scope; one-time or reusable; confirmedBy/message/time; effective interval; source; lifecycle (`active`, `archived`, `superseded`, `disputed`); supersedes/conflict references. Existing household preferences remain readable. |
+| `members.json` | Stable member IDs, observed app IDs, user-confirmed ownership/joint treatment and access scope. Record unknowns. A shared login or ownership label is not evidence of privacy controls or consent for every account. |
+| `cases.json` | Stable caseId/type; account/app/source/evidence references; relationship type; expected amount/currency when known; received allocations; owner/assignee; status; next action/date; last checked; history and resolution evidence. |
+| `reviews/<runId>/` and `reviews/cursor.json` | Run scope, inspected identities/revisions, handled IDs, open case IDs and discovery cutoff/method. Advance only the observed coverage; keep unresolved cases independently queryable. |
+| `obligations.json` | Stable obligationId, native recurring ID if any, paying/receiving account, merchant/source identifiers, cadence, amount/range/currency, due-date and cash-date rules, evidence, confidence, user confirmation, active/canceled state, revision history. Owned by cash planning. |
+| `obligation-occurrences/<runId>.json` | Stable occurrence IDs linked to obligation/version, expected amount/date bounds, actual matched settlement IDs/allocations and state. Partial payment leaves the remainder; cancellations/supersession preserve history. |
+| `budgets/<runId>/`, `goals/<runId>/` | Native IDs, observed versions, affected periods/groups/categories, budget mode/rollover semantics, planned/actual/carry amounts, account/goal allocations, linking/funding state, proposed/verified changes. Owned by budget management; reports reference these versions. |
+
+Cases include review questions, refunds/reimbursements, missing counterparts, changed bills, goal funding, and `manual-repair-watch`. Use `open`, `awaiting-context`, `expected`, `partial`, `disputed`, `deferred`, `resolved`, or `abandoned` as applicable. Link events, such as a promised refund or inserted manual row, to evidence; do not equate them with posted cash. An unanswered case remains open across runs, even after the discovery cursor moves. Resolve only with evidence or explicit user disposition; preserve why something was abandoned. A refunded amount cannot be allocated twice across purchases/cases. Retain original and current expected amounts with their basis.
+
+Load only active, non-superseded preferences whose scope and effective interval cover the task. Legacy preferences without lifecycle remain dated candidates to check for applicability, not automatically discarded or promoted to current. A current explicit user choice takes precedence within its scope; preserve the older version and do not silently generalize the new choice. Preferences never become authorization. Conflicts remain visible until resolved; one receipt does not establish a universal merchant rule. Use cases to avoid repeatedly asking the same deferred question, with a review date only when chosen or useful. Future dates are not reminders without a real scheduler handle.
+
+## Derived analysis
+
+Use `plans/cash/<runId>/` and `reports/money/<runId>/` for plan/report JSON, summary, verification and optional private visualization. Follow [analysis](analysis.md#saved-analysis). Plans reference obligation versions/occurrences; reports reference actual evidence and applicable budget versions. They do not overwrite those source records or upgrade their freshness.

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "host": "claude-code-cli",
+  "setup": {
+    "invocation": "explicit Along setup command",
+    "user_only": true
+  },
+  "runtime": {
+    "file_read": {"status": "passed", "tools": ["Read"]},
+    "ui_read": {"status": "unknown", "tools": []},
+    "ui_write": {"status": "unknown", "tools": []},
+    "connector_read": {"status": "unknown", "tools": []},
+    "python3_10": {"status": "passed", "tools": ["python3"]},
+    "scheduler": {"status": "unknown", "tools": []}
+  }
+}

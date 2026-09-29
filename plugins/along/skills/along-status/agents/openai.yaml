@@ -1,0 +1,6 @@
+interface:
+  display_name: "Show Along status"
+  short_description: "See account sync coverage and unresolved work"
+  default_prompt: "Use $along-status to show my account sync and reconciliation status."
+policy:
+  allow_implicit_invocation: true
