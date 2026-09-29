@@ -12,7 +12,7 @@ python3 build.py --output ./dist
 
 Outputs:
 
-- `dist/codex/along-codex-0.1.0.zip` — Codex plugin and local marketplace.
+- `dist/codex/along-codex-0.1.1.zip` — Codex plugin and local marketplace.
 - Matching `.sha256` checksum files.
 
 ## Test

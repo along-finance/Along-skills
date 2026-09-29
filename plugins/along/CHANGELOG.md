@@ -1,3 +1,10 @@
+# 0.1.1
+
+- Codex-only supported release; other hosts remain contributor experiments.
+- Short setup intake with app, browser and sign-in choices.
+- Optional household label and explained timezone, currency, storage and saved-record defaults.
+- Deferred password-manager choices resolved only when sign-in is needed; existing sessions and explicit choices are reused.
+
 # Changelog
 
 ## 0.1.0

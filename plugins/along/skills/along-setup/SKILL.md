@@ -5,7 +5,7 @@ description: Set up Along's household profile, app/workspace, private storage, a
 
 # Set up Along
 
-This is the explicit Along setup command. Run it only after the user invokes this command or directly asks to create or change the household setup. Read [setup](references/setup.md) and complete only the requested setup scope.
+This is the explicit Along setup command. Run it only after the user invokes this command or directly asks to create or change the household setup. Read [setup](references/setup.md), use its short intake with app/browser/sign-in choices and explained defaults, and complete only the requested setup scope.
 
 Setup establishes the household, selected finance app/workspace, private storage, timezone/currency and access preferences, then inventories accounts visible in that app. It does not sign into source institutions, connect or recover feeds, import or sync transactions, reconcile records, repair ledger rows, or change app data. Keep those as separate user-requested workflows.
 

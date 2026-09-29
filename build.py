@@ -21,7 +21,7 @@ from pathlib import Path, PurePosixPath
 from typing import Sequence
 
 
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 SKILL_NAMES = (
     "along-manage-budget",
     "along-plan-cash",
@@ -306,7 +306,7 @@ def _write_marketplace_metadata(destination: Path, data: bytes) -> None:
 def _write_claude_adapter(destination: Path) -> None:
     text = """# Claude host adapter
 
-Claude Desktop: upload `along-claude-0.1.0.zip` through Customize > Plugins >
+Claude Desktop: upload `along-claude-0.1.1.zip` through Customize > Plugins >
 Add plugin > Upload plugin. Keep the complete bundle installed so shared files
 remain available. Start a new Cowork task after installing or updating.
 

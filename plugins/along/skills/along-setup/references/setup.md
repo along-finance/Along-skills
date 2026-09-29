@@ -6,9 +6,29 @@ Read the shared [workflow](../../along-sync-account/references/workflow.md) for 
 
 ## Establish the household profile
 
-1. Reuse an existing selected household and its saved preferences. Resolve the household from explicit context or the configured private pointer; never infer it from a computer username. Ask only for missing essentials: finance app and edition, app/workspace, household identity, private data root and retention choice, timezone, default reporting currency, and browser/profile or desktop access route. Keep each account's actual currency and joint ownership. Store credential/provider references only, never passwords, codes or session tokens.
+1. Reuse the selected household and its saved preferences. Use the short intake below; ask only what is missing. A household label is optional and is not proof of account ownership. Record a stable opaque ID separately. Keep each account's actual currency and joint ownership. Save password-manager/provider references only, never secrets.
 2. State the setup scope before accessing the finance app. Supplied files, saved evidence and an existing status view do not require setup. If the user requested live app inventory, perform the shared runtime check, verify the displayed app/workspace identity and read a harmless account-list or account-detail view. Tool availability alone is not a pass. Record tool access and app access separately. If the app cannot be read, save a partial setup checkpoint and name the user action needed.
 3. During initial setup or an app/edition change, reuse applicable public app knowledge and refresh only the topics needed for inventory: account types and views, ownership/mapping fields, balances as displayed, feed state and supported inventory controls. Mark documentation `documented-unverified` until a suitable app observation corroborates it. Do not research every future operation here.
+
+## Short intake
+
+Lead with “Let’s choose your finance app and how to access it.” Reuse answers already given in the conversation. Prefer an available structured question tool so choices appear in the host UI; use it only when its current mode and schema support the question. Otherwise ask the same concise choices in chat. Do not switch modes merely to obtain a question tool, invent a tool, or say questions were shown when they were not.
+
+Ask these decisions, in this order, grouped when the UI supports it:
+
+- **Finance app:** “Which finance app do you use?” Example choices: Quicken Simplifi, Monarch Money, or another app. If the user says only Quicken, distinguish Simplifi from Quicken Classic. Resolve a workspace only if multiple are visible or named.
+- **Browser/access:** “Which browser should Along use?” Offer browsers actually available, plus a desktop-app route when applicable. Example: Chrome (your signed-in profile), Safari, or another available browser. Ask which profile only when more than one could be intended. Do not infer that a browser tool is usable until the runtime check passes.
+- **Sign-in preference:** “How should Along help you sign in when needed?” Offer distinct choices: “Password manager / browser autofill,” “I’ll sign in myself,” and “Decide later.” For the first choice, ask which provider, with examples such as LastPass, 1Password, or browser autofill; accept a named manager as free text. Keep manual sign-in and deferred choice separate when saving. Selecting a manager records a preference; it does not open a vault, connect a bank, or grant blanket access. A current explicit choice such as “use LastPass” satisfies this question.
+
+Then present one compact defaults summary, rather than an unexplained settings questionnaire. Reuse existing explicit choices; offer “Use these defaults” and “Change settings” when confirmation of new storage is needed:
+
+- **Household label:** “My household”; editable later. Ask for a label only to distinguish multiple existing households. Never derive personal identity from a computer username.
+- **Timezone:** use the known local timezone and show its friendly name, for example “New York / Eastern time.” Explain only once: “This helps interpret today, month-end, and bill deadlines.” If unknown, defer until a date-sensitive task needs it; do not block inventory. Preserve statement date-only values rather than shifting them between timezones.
+- **Reporting currency:** use the selected app's observed default, or an explicit user choice. If unknown, defer until a report needs it; never infer every account's currency from this default.
+- **Private folder:** show the actual proposed path in a user-owned documents/workspace location outside the plugin and repository; allow a different folder. Resolve it from actual host context, not a fabricated path. Never save household records inside an extracted plugin just because it is the current working directory.
+- **Saved records:** explain retention as “what Along keeps after a task.” Offer a concrete default: “Keep the records needed to continue later—for example, the statement used for a reconciliation, its results, and unresolved items—in your private folder until you ask to remove them.” An alternative is “Summaries only: keep results and preferences; ask before saving a statement or export.” Summaries-only may require resupplying a file later and does not waive the evidence needed for an app change. Do not add expiry dates, automatic purging, or a background cleanup promise.
+
+Optional label, timezone, currency, and deferred sign-in choices must not become a five-question prerequisite to identifying the app. Before saving, show the concrete storage/retention choice; carry any unresolved optional values as unknown or deferred. A compact acceptance covers the proposed defaults, not future bank access or app mutations.
 
 ## Inventory the finance app only
 

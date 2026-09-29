@@ -14,7 +14,7 @@ Codex needs browser/computer access to work directly in your finance app. Instal
 
 Download the Codex bundle from [Releases](https://github.com/along-finance/Along-skills/releases).
 
-1. Download and extract `along-codex-0.1.0.zip`.
+1. Download and extract `along-codex-0.1.1.zip`.
 2. Open a terminal in the extracted `along` folder and run:
 
    ```bash
@@ -26,7 +26,7 @@ Download the Codex bundle from [Releases](https://github.com/along-finance/Along
 
 ## Start using Along
 
-Run **`$along-setup` in Codex** when you want to save your household profile. Setup does not connect or sync accounts.
+Run **`$along-setup` in Codex** when you want to save your household profile. Setup asks which app, browser, and sign-in method you prefer. You can choose a password manager such as LastPass, sign in yourself, or decide later. Other settings come with explained defaults. Setup does not connect or sync accounts.
 
 After that, ask naturally—your assistant chooses the relevant skill. You can also reconcile a supplied statement without setup.
 

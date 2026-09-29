@@ -94,7 +94,7 @@ class BuildTests(unittest.TestCase):
                 self.assertFalse(any("/agents/" in name for name in archive.namelist()))
                 metadata = json.loads(archive.read("along/.claude-plugin/plugin.json"))
                 self.assertEqual(metadata["name"], "along")
-                self.assertEqual(metadata["version"], "0.1.0")
+                self.assertEqual(metadata["version"], BUILD.VERSION)
                 self.assertEqual(metadata["author"], {"name": "Along contributors"})
                 self.assertEqual(metadata["license"], "MIT")
                 self.assertEqual(metadata["skills"], "./skills/")
