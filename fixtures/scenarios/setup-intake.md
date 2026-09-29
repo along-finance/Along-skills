@@ -7,3 +7,5 @@ Use the explicit Along setup command in preview mode. I use Quicken Simplifi in 
 ## Evaluate
 
 Reuse the supplied choices. Default the household label; explain timezone briefly and retention with a concrete saved-record example. Offer a private folder outside the plugin, plus changeable defaults. Keep manual sign-in distinct from a deferred preference. No source onboarding or financial mutation.
+
+A preview-only intake remains incomplete; it cannot mark setup complete without the live readiness check.

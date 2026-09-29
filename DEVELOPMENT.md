@@ -12,7 +12,7 @@ python3 build.py --output ./dist
 
 Outputs:
 
-- `dist/codex/along-codex-0.1.1.zip` — Codex plugin and local marketplace.
+- `dist/codex/along-codex-0.1.2.zip` — Codex plugin and local marketplace.
 - Matching `.sha256` checksum files.
 
 ## Test
@@ -29,7 +29,8 @@ The validator runs the finance-helper tests. See [release-tools](release-tools/R
 
 ## Release checks
 
-- Verify installation and skill routing in each supported host. Setup must remain explicitly user-invoked.
+- Verify installation and skill routing in desktop and CLI. Setup must remain explicitly user-invoked, and all other skills must wait for completed setup. Exercise `fixtures/scenarios/setup-readiness.md`.
+- The setup prerequisite is enforced by skill instructions and saved evidence, not a host-level tool lock. Keep each skill entry point linked to the shared gate.
 - Test the actual browser/computer route separately from skill loading. Loading instructions is not evidence that an assistant can operate a finance app.
 - Use disposable data for edit/recovery tests. Never infer live provider write support from a synthetic ledger test.
 - Keep household data and private test logs out of the repository and archives.

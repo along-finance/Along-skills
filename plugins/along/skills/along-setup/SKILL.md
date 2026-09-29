@@ -9,6 +9,6 @@ This is the explicit Along setup command. Run it only after the user invokes thi
 
 Setup establishes the household, selected finance app/workspace, private storage, timezone/currency and access preferences, then inventories accounts visible in that app. It does not sign into source institutions, connect or recover feeds, import or sync transactions, reconcile records, repair ledger rows, or change app data. Keep those as separate user-requested workflows.
 
-If another Along workflow is missing a persistent setup profile, it must preserve the user's original request and tell the user to invoke the explicit Along setup command; it must not silently invoke this skill or reproduce the full household setup. A one-off file or live task may resolve only the minimum account identity it needs when its own workflow allows it.
+If another Along workflow is missing a persistent setup profile, it must preserve the user's original request and tell the user to invoke the explicit Along setup command; it must not silently invoke this skill or reproduce the full household setup. All other Along skills wait for completed setup and its computer-use verification.
 
 Finish with a saved setup profile and app inventory, or a clearly partial result with the exact missing user action. Do not imply source onboarding or reconciliation has occurred.

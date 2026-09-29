@@ -5,6 +5,8 @@ description: Use Along to bring bank transactions into a finance-app account, on
 
 # Sync an account with Along
 
+**Before starting:** Apply the [setup prerequisite](references/workflow.md#explicit-setup-and-account-actions). If setup is missing or partial, ask the user to run `$along-setup` and stop this workflow.
+
 The user action is **read this account's source and bring its activity into the finance app using Along**. Say the named source, destination and period before acting. “Connect” is ambiguous: resolve whether the user wants Along-managed updates or a one-off check. For “refresh/reconnect” requests that may refer to the app’s own connector, clarify “Refresh the app’s existing connection, or use Along to supply updates?” using the actual selected app name. App-feed recovery preserves app ownership and follows the recovery reference without Along onboarding. Model selection of this skill grants no new account access or write authority.
 
 Read [workflow](references/workflow.md) for scope and setup boundaries, [records](references/records.md) for existing state, and [connections](references/accounts-connections.md) when inspecting access, onboarding or recovering a feed. Before source retrieval read [evidence](references/evidence.md) and [authentication](references/authentication.md); before import/write read [changes](references/changes.md), [capabilities](references/capabilities.md), and [Monarch behavior](references/monarch.md) when applicable.

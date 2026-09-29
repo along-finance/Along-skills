@@ -4,33 +4,39 @@ Along has skills to help manage household finance work in your personal finance 
 
 Review transactions, reconcile accounts, plan bills, manage budgets, and understand your spending—all through your AI assistant.
 
-## Supported platform
+## Supported platforms
 
-**Along currently supports Codex only.** Use Codex Desktop for working in your finance app. Codex CLI can load the skills, but standalone computer use has not been verified.
+- **Desktop:** Codex desktop app, or Codex in the ChatGPT desktop app.
+- **Terminal:** Codex CLI with computer use enabled.
 
-Codex needs browser/computer access to work directly in your finance app. Installing Along adds the workflows, not that access. You can also use supplied statements and exports without computer use. Live syncing and finance-app edits are still in preview.
+Along needs computer-use access to your chosen browser or finance app. Setup checks that access and helps you install or enable the required capability if it is missing.
 
 ## Install
 
-Download the Codex bundle from [Releases](https://github.com/along-finance/Along-skills/releases).
+Ask your desktop assistant or Codex CLI:
 
-1. Download and extract `along-codex-0.1.1.zip`.
-2. Open a terminal in the extracted `along` folder and run:
+> Install Along from https://github.com/along-finance/Along-skills. Use the repository's installation instructions, and computer use if needed.
 
-   ```bash
-   codex plugin marketplace add .
-   codex plugin add along@along
-   ```
+Or run these commands yourself:
 
-3. Start a new Codex chat.
+```bash
+codex plugin marketplace add along-finance/Along-skills
+codex plugin add along@along
+```
+
+For a local copy, download or clone this repository, then replace `along-finance/Along-skills` in the first command with the path to its folder. The marketplace is at `.agents/plugins/marketplace.json`; the plugin is at `plugins/along`.
+
+Start a new chat after installation. The desktop app also supports installing through its plugin directory; see [OpenAI's plugin installation guide](https://developers.openai.com/plugins/build/plugins).
 
 ## Start using Along
 
-Run **`$along-setup` in Codex** when you want to save your household profile. Setup asks which app, browser, and sign-in method you prefer. You can choose a password manager such as LastPass, sign in yourself, or decide later. Other settings come with explained defaults. Setup does not connect or sync accounts.
+Run **`$along-setup`** first. Setup asks for your finance app, browser, sign-in preference, and private records folder. It then checks computer use and reads your app's account list to confirm access. You handle any sign-in or permission prompts that need you.
 
-After that, ask naturally—your assistant chooses the relevant skill. You can also reconcile a supplied statement without setup.
+**Other Along skills wait until setup is complete.** Setup runs only when you ask for it. If access is missing, Along saves your progress and explains the next step. Installing a skill alone does not grant computer access.
 
-**Sync brings transactions into your app. Reconcile checks whether records agree.** Along asks before taking over an account's sync.
+After setup, ask naturally—your assistant chooses the relevant skill.
+
+**Sync brings transactions into your app. Reconcile checks whether records agree.** Household setup does not connect banks or take over syncing. Along asks before taking over an account's sync.
 
 ## Skills
 
@@ -64,6 +70,6 @@ Claude Desktop, Claude Code CLI, and other assistants are future contributor opp
 
 ## Development
 
-See [DEVELOPMENT.md](https://github.com/along-finance/Along-skills/blob/main/DEVELOPMENT.md) for building, testing, and release checks.
+See [DEVELOPMENT.md](https://github.com/along-finance/Along-skills/blob/main/DEVELOPMENT.md) for contributor instructions.
 
 [MIT license](LICENSE).

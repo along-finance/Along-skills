@@ -5,6 +5,8 @@ description: Review changed transactions from a saved checkpoint; classify, spli
 
 # Review household transactions
 
+**Before starting:** Apply the [setup prerequisite](../along-sync-account/references/workflow.md#explicit-setup-and-account-actions). If setup is missing or partial, ask the user to run `$along-setup` and stop this workflow.
+
 Treat this as a queue over the finance-app ledger. It completes transaction decisions and authorized app metadata; it does not establish that the source feed is complete. Route source comparison, missing or duplicate recovery, balance discrepancies and cross-account matching to [along-reconcile](../along-reconcile/SKILL.md).
 
 Read [workflow](../along-sync-account/references/workflow.md) for every run; [records](../along-sync-account/references/records.md) when reading or saving household evidence/cases; [capabilities](../along-sync-account/references/capabilities.md) before interpreting unfamiliar app behavior; and [changes](../along-sync-account/references/changes.md) before proposing or applying app changes. Read [categorization](references/categorization.md) for every review. Read [splits and tenders](references/splits-and-tenders.md) for receipt-backed allocations, [refunds and reimbursements](references/refunds-and-reimbursements.md) for credits or expected repayments, and [review state and rules](references/review-state-and-rules.md) for native reviewed flags, assignments or rule work. Before acquiring source evidence, read the shared [evidence](../along-sync-account/references/evidence.md) contract; before mailbox access read [email](../along-sync-account/references/email.md); before interpreting Monarch behavior read [Monarch knowledge](../along-sync-account/references/monarch.md).

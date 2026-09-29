@@ -5,6 +5,8 @@ description: Project cash coverage and maintain recurring obligations. Use for b
 
 # Plan upcoming cash
 
+**Before starting:** Apply the [setup prerequisite](../along-sync-account/references/workflow.md#explicit-setup-and-account-actions). If setup is missing or partial, ask the user to run `$along-setup` and stop this workflow.
+
 Use this skill for two related future-cash jobs:
 
 - **Forecast:** determine whether selected accounts cover listed bills and other cash events through a date.

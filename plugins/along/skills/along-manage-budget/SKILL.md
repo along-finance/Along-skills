@@ -5,6 +5,8 @@ description: Review, version and change household budgets, rollovers, allocation
 
 # Manage budgets and goals
 
+**Before starting:** Apply the [setup prerequisite](../along-sync-account/references/workflow.md#explicit-setup-and-account-actions). If setup is missing or partial, ask the user to run `$along-setup` and stop this workflow.
+
 Use this skill for period-specific household budget work: compare planned and actual amounts, maintain rollover decisions, prepare supported budget or goal allocation changes, reconcile goal funding and refunds, and run a scoped month-close review. It owns budget and allocation versions and goal cases. It does not own recurring bills or expected cash events; those belong to [along-plan-cash](../along-plan-cash/SKILL.md).
 
 Read [workflow](../along-sync-account/references/workflow.md), [analysis basis](../along-sync-account/references/analysis.md), and [records](../along-sync-account/references/records.md). For source gaps, read the shared [evidence procedure](../along-sync-account/references/evidence.md). Load [budget operations](references/budget-operations.md) for period, rollover and allocation work, or [goals and close](references/goals-and-close.md) for goal funding, refunds and month close. Those references identify the required capability, Monarch-knowledge and write-contract dependencies; a missing dependency blocks its app-specific operation.

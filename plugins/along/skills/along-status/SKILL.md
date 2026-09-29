@@ -5,6 +5,8 @@ description: Show Along sync coverage, latest sync, reconciliation coverage and 
 
 # Show Along status
 
+**Before starting:** Apply the [setup prerequisite](../along-sync-account/references/workflow.md#explicit-setup-and-account-actions). If setup is missing or partial, ask the user to run `$along-setup` and stop this workflow.
+
 Read [workflow](../along-sync-account/references/workflow.md) and follow [status](../along-sync-account/references/accounts-status.md). Default to saved observations with dates. Without a profile, say Along has no saved household setup; do not launch setup. Inspect a named app account only when requested and identifiable.
 
 Lead with who updates each account: **Along**, **the app**, **manual**, or **not established**. For Along accounts show verified synced-through coverage separately from source access, app refresh time and reconciled period. An account can be ready for sync with no completed sync yet. Show pending onboarding separately.
