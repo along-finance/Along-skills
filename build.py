@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build deterministic Along bundles for Codex and Claude hosts.
+"""Build the supported Codex bundle, with optional experimental host output.
 
 The canonical source is the plugin tree under ``plugins/along``.  This module
 does not install or publish anything; it materializes two host-specific trees
@@ -410,8 +410,8 @@ def _prepare_host(
     return zip_path, checksum_path
 
 
-def build_release(source: Path | str | None = None, output: Path | str | None = None) -> dict[str, tuple[Path, Path]]:
-    """Build both host bundles and return their ZIP/checksum paths."""
+def build_release(source: Path | str | None = None, output: Path | str | None = None, *, include_experimental_claude: bool = False) -> dict[str, tuple[Path, Path]]:
+    """Build Codex and explicitly requested experimental bundles."""
 
     source_path = Path(source) if source is not None else _default_source()
     output_path = Path(output) if output is not None else _default_output()
@@ -424,7 +424,7 @@ def build_release(source: Path | str | None = None, output: Path | str | None = 
     marketplace_metadata = _read_marketplace_template()
     output_path.mkdir(parents=True, exist_ok=True)
     results: dict[str, tuple[Path, Path]] = {}
-    for host in ("codex", "claude"):
+    for host in (("codex", "claude") if include_experimental_claude else ("codex",)):
         results[host] = _prepare_host(source_path, files, plugin, marketplace_metadata, output_path, host)
     return results
 
@@ -433,13 +433,14 @@ def _parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, default=_default_source())
     parser.add_argument("--output", type=Path, default=_default_output())
+    parser.add_argument("--include-experimental-claude", action="store_true", help="Also build unsupported Claude contributor scaffolding")
     return parser.parse_args(argv)
 
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = _parse_args(argv)
     try:
-        results = build_release(args.source, args.output)
+        results = build_release(args.source, args.output, include_experimental_claude=args.include_experimental_claude)
     except BuildError as exc:
         print(f"along build failed: {exc}", file=sys.stderr)
         return 2

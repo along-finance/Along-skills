@@ -23,6 +23,12 @@ class BuildTests(unittest.TestCase):
     def test_default_output_is_local_to_builder(self) -> None:
         self.assertEqual(BUILD._default_output(), HERE / "dist")
 
+    def test_default_build_is_codex_only(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            result = BUILD.build_release(SOURCE, temp)
+            self.assertEqual(set(result), {"codex"})
+            self.assertFalse((Path(temp) / "claude").exists())
+
     def _assert_archive_safe(self, archive: zipfile.ZipFile) -> None:
         names = archive.namelist()
         self.assertTrue(names)
@@ -49,7 +55,7 @@ class BuildTests(unittest.TestCase):
     def test_builds_both_host_archives_with_expected_inventory(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             output = Path(temp) / "release"
-            result = BUILD.build_release(SOURCE, output)
+            result = BUILD.build_release(SOURCE, output, include_experimental_claude=True)
             self.assertEqual(set(result), {"codex", "claude"})
             expected_skills = set(BUILD.SKILL_NAMES)
             for host, (zip_path, checksum_path) in result.items():
@@ -104,8 +110,8 @@ class BuildTests(unittest.TestCase):
 
     def test_archives_are_byte_for_byte_deterministic(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
-            first = BUILD.build_release(SOURCE, Path(temp) / "first")
-            second = BUILD.build_release(SOURCE, Path(temp) / "second")
+            first = BUILD.build_release(SOURCE, Path(temp) / "first", include_experimental_claude=True)
+            second = BUILD.build_release(SOURCE, Path(temp) / "second", include_experimental_claude=True)
             for host in ("codex", "claude"):
                 first_zip, first_checksum = first[host]
                 second_zip, second_checksum = second[host]

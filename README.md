@@ -4,24 +4,15 @@ Along has skills to help manage household finance work in your personal finance 
 
 Review transactions, reconcile accounts, plan bills, manage budgets, and understand your spending—all through your AI assistant.
 
-## Supported platforms
+## Supported platform
 
-| Platform | Support |
-| --- | --- |
-| **Codex Desktop** | Along skills and computer use. Recommended for working in your finance app. |
-| **Claude Desktop · Cowork** | Along skills, statement/export analysis, and assisted viewing of your finance app. Full app interaction is not yet verified. |
-| **Claude Code · CLI** | Along skills load. Interactive computer use is available on macOS; live finance-app workflows are not yet verified. |
-| **Codex CLI** | Along skills. Our computer-use test used the Codex Desktop integration; standalone computer use is not verified. |
+**Along currently supports Codex only.** Use Codex Desktop for working in your finance app. Codex CLI can load the skills, but standalone computer use has not been verified.
 
-**To work directly in your finance app, your assistant needs browser/computer access.** Installing Along adds the workflows, not that access. You can also use supplied statements and exports without computer use.
-
-Claude's native computer use can only view browsers. Clicking, navigating, or editing a web app needs its separate browser tools, such as [Claude in Chrome](https://code.claude.com/docs/en/chrome). Full live syncing and finance-app edits are still in preview.
+Codex needs browser/computer access to work directly in your finance app. Installing Along adds the workflows, not that access. You can also use supplied statements and exports without computer use. Live syncing and finance-app edits are still in preview.
 
 ## Install
 
-Download the bundle for your assistant from [Releases](https://github.com/along-finance/Along-skills/releases).
-
-### Codex
+Download the Codex bundle from [Releases](https://github.com/along-finance/Along-skills/releases).
 
 1. Download and extract `along-codex-0.1.0.zip`.
 2. Open a terminal in the extracted `along` folder and run:
@@ -33,25 +24,9 @@ Download the bundle for your assistant from [Releases](https://github.com/along-
 
 3. Start a new Codex chat.
 
-### Claude Desktop
-
-1. Download `along-claude-0.1.0.zip`.
-2. In **Cowork → Customize → Plugins → Add plugin → Upload plugin**, select the ZIP.
-3. Start a new Cowork task.
-
-### Claude Code CLI
-
-Download and extract `along-claude-0.1.0.zip`, then launch Claude with the extracted folder:
-
-```bash
-claude --plugin-dir /path/to/along
-```
-
-This loads Along for that session. For browser interaction, set up [Claude in Chrome](https://code.claude.com/docs/en/chrome) and add `--chrome`. Native [computer use](https://code.claude.com/docs/en/computer-use) is enabled separately through `/mcp → computer-use` in an interactive macOS session; it is unavailable with `claude -p`.
-
 ## Start using Along
 
-Run **`$along-setup` in Codex** or **`/along:along-setup` in Claude** when you want to save your household profile. Setup does not connect or sync accounts.
+Run **`$along-setup` in Codex** when you want to save your household profile. Setup does not connect or sync accounts.
 
 After that, ask naturally—your assistant chooses the relevant skill. You can also reconcile a supplied statement without setup.
 
@@ -82,6 +57,10 @@ After that, ask naturally—your assistant chooses the relevant skill. You can a
 ## Your data
 
 Install the full bundle—the skills work together. Keep household records in a separate private folder, not in this repository or the plugin. Never store passwords in Along files.
+
+## Future platforms
+
+Claude Desktop, Claude Code CLI, and other assistants are future contributor opportunities, not supported options today. Contributions are welcome—see [Adding a platform](DEVELOPMENT.md#adding-a-platform). The workflows are kept separate from host-specific packaging so support can grow over time.
 
 ## Development
 
