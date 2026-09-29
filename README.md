@@ -74,7 +74,7 @@ After that, ask naturally—your assistant chooses the relevant skill. You can a
 
 - After selecting `along-setup`: “Set up my household profile and finance app. Do not connect bank sources yet.”
 - “Use Along to sync my checking account into my finance app.”
-- “Reconcile checking against this September statement without taking over its feed.”
+- “Reconcile checking against this September statement.”
 - “Review new transactions since the last checkpoint.”
 - “Can checking cover bills through next payday?”
 - “Explain last month’s spending.”
