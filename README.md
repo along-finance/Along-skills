@@ -1,75 +1,57 @@
 # Along skills
 
-Along has skills to help manage household finance work in your personal finance app, such as Quicken Simplifi or Monarch Money.
+Bring transactions and balances from accounts your personal finance app doesn’t support—or struggles to keep connected—into apps like Quicken Simplifi and Monarch Money.
 
-Review transactions, reconcile accounts, plan bills, manage budgets, and understand your spending—all through your AI assistant.
-
-## Supported platforms
-
-- **Desktop:** Codex or ChatGPT desktop app
-- **Terminal:** Codex CLI with computer use enabled.
-
-Along needs computer-use access to your chosen browser or finance app. Setup checks that access and helps you install or enable the required capability if it is missing.
+Along gives your AI assistant workflows to access those accounts through your browser, bring transactions into your finance app, and reconcile the results. It also helps review transactions, manage budgets, plan bills, and explain spending.
 
 ## Install
 
-Ask your desktop assistant or Codex CLI:
+Works with the Codex or ChatGPT desktop app, or Codex CLI, with computer use enabled.
 
-> Install Along from https://github.com/along-finance/Along-skills. Use the repository's installation instructions, and computer use if needed.
+Ask your assistant:
 
-Or run these commands yourself:
+> Install Along from [https://github.com/along-finance/Along-skills](https://github.com/along-finance/Along-skills) using the repository’s installation instructions.
+
+Or run:
 
 ```bash
 codex plugin marketplace add along-finance/Along-skills
 codex plugin add along@along
 ```
 
-For a local copy, download or clone this repository, then replace `along-finance/Along-skills` in the first command with the path to its folder. The marketplace is at `.agents/plugins/marketplace.json`; the plugin is at `plugins/along`.
+Install the full bundle—the skills work together. Start a new chat after installation.
 
-Start a new chat after installation. The desktop app also supports installing through its plugin directory; see [OpenAI's plugin installation guide](https://developers.openai.com/plugins/build/plugins).
+## Get started
 
-## Start using Along
+Run `$along-setup` to choose your finance app, browser, and private records folder. Setup checks access; it doesn’t connect bank sources or start syncing.
 
-Run **`$along-setup`** first. Setup asks for your finance app, browser, sign-in preference, and private records folder. It then checks computer use and reads your app's account list to confirm access. You handle any sign-in or permission prompts that need you.
+Then try:
 
-**Other Along skills wait until setup is complete.** Setup runs only when you ask for it. If access is missing, Along saves your progress and explains the next step. Installing a skill alone does not grant computer access.
+- “My finance app doesn’t support this account. Help me bring its transactions in.”
+- “Use Along to sync my checking account.”
+- “Check whether these transactions match my statement.”
+- “Review new transactions and help categorize them.”
+- “Can checking cover my bills until payday?”
 
-After setup, ask naturally—your assistant chooses the relevant skill.
+## Included skills
 
-**Sync brings transactions into your app. Reconcile checks whether records agree.** Household setup does not connect banks or take over syncing. Along asks before taking over an account's sync.
-
-## Skills
-
-| Skill | What it helps you do |
+| Skill | What it does |
 | --- | --- |
-| `along-setup` | Set up your household profile. You invoke this yourself. |
-| `along-sync-account` | Use Along to bring bank transactions into your finance app. |
-| `along-status` | See account status and unfinished work. |
-| `along-reconcile` | Check app records against statements or saved source records. |
+| `along-setup` | Set up your finance app and preferences. |
+| `along-sync-account` | Bring account transactions into your finance app. |
+| `along-status` | Show sync coverage and unfinished work. |
+| `along-reconcile` | Find missing transactions and differences. |
 | `along-review-transactions` | Categorize, split, and review transactions. |
-| `along-report-money` | Explain spending, income, and changes over time. |
-| `along-plan-cash` | Plan bills and check cash through your next payday. |
-| `along-manage-budget` | Manage budgets, rollovers, and goal funding. |
+| `along-report-money` | Explain spending and income. |
+| `along-plan-cash` | Plan bills and upcoming cash needs. |
+| `along-manage-budget` | Update budgets, rollovers, and goals. |
 
-## Example requests
+Account access depends on what your assistant can operate in your browser. Along checks the available route for your account and app.
 
-- After selecting `along-setup`: “Set up my household profile and finance app. Do not connect bank sources yet.”
-- “Use Along to sync my checking account into my finance app.”
-- “Reconcile checking against this September statement.”
-- “Review new transactions since the last checkpoint.”
-- “Can checking cover bills through next payday?”
-- “Explain last month’s spending.”
+## Privacy and affiliation
 
-## Your data
+Along saves household records in a private folder you choose. Information your assistant reads—including transactions, statements, and browser content—may be sent to its cloud model provider under that provider’s data policies.
 
-Install the full bundle—the skills work together. Keep household records in a separate private folder, not in this repository or the plugin. Never store passwords in Along files.
+Along is an independent project, not affiliated with Quicken, Monarch Money, or the banks and finance apps mentioned here.
 
-## Future platforms
-
-Claude Desktop, Claude Code CLI, and other assistants are future contributor opportunities, not supported options today. Contributions are welcome—see [Adding a platform](DEVELOPMENT.md#adding-a-platform). The workflows are kept separate from host-specific packaging so support can grow over time.
-
-## Development
-
-See [DEVELOPMENT.md](DEVELOPMENT.md) for contributor instructions.
-
-[MIT license](LICENSE).
+[Development](https://github.com/along-finance/Along-skills/blob/main/DEVELOPMENT.md) · [MIT license](https://github.com/along-finance/Along-skills/blob/main/LICENSE)
