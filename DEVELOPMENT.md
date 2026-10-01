@@ -37,9 +37,7 @@ The validator runs the finance-helper tests. See [release-tools](release-tools/R
 - Update `SOURCE-MANIFEST.json` when source files change. Its `files` mapping contains SHA-256 hashes of tracked files other than the manifest itself.
 - Retain immutable versioned ZIPs and checksums. Users can retain an older archive for rollback; keep one installed Along version to avoid duplicate routing.
 
-See [VERIFICATION.md](VERIFICATION.md) for current limitations and version-specific evidence. Version 0.1.2 is development source, not a published release. Historical release attachments apply only to their tagged versions.
-
-Before publishing, align the manifest, build version, changelog, verification page, and release archives. Keep the repository and packaged README copies in sync; use repository URLs for documentation that is not bundled.
+Detailed test results and current limitations are in `VERIFICATION.md` attached to the [release](https://github.com/along-finance/Along-skills/releases/tag/v0.1.0).
 
 ## Adding a platform
 
