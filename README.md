@@ -6,7 +6,7 @@ Review transactions, reconcile accounts, plan bills, manage budgets, and underst
 
 ## Supported platforms
 
-- **Desktop:** Codex desktop app, or Codex in the ChatGPT desktop app.
+- **Desktop:** Codex or ChatGPT desktop app
 - **Terminal:** Codex CLI with computer use enabled.
 
 Along needs computer-use access to your chosen browser or finance app. Setup checks that access and helps you install or enable the required capability if it is missing.
