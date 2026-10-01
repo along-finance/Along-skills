@@ -10,7 +10,8 @@ Review transactions, reconcile accounts, plan bills, manage budgets, and underst
 
 ## Requirements
 
-- Codex desktop app, Codex in the ChatGPT desktop app, or Codex CLI with plugin support.
+- **Desktop:** Codex or ChatGPT desktop app with plugin support.
+- **Terminal:** Codex CLI with plugin support and computer use enabled.
 - Computer-use access to your chosen browser or finance app. Along does not bundle that capability; setup checks whether it is available.
 - Access to your finance app and a separate private folder for household records. You handle sign-in and permission prompts that need you.
 - Python 3.10 or later when running the bundled finance-check helpers. Building from source also requires Python 3.10 or later.
