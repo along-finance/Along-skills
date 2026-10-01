@@ -23,7 +23,7 @@
     "fixtures/scenarios/sync-choice.md": "bb108221a927bbc9282a5a0293f9c915c79bc4727eb9aa256719fede475266cb",
     "fixtures/scenarios/uncertain-import.md": "119576faccbcdd3218fac2a92f165cb43fbf5c8140e33ea53929a480609a5eab",
     "plugins/along/.codex-plugin/plugin.json": "77047475f2f651a459b3fcd2fd4806286c2b69f2a94656bfda45bd8c7ec664c7",
-    "plugins/along/CHANGELOG.md": "0f23135eea3e6dbc1c4d2f83642c462b1cb9298b71694fd0520fdf211f87547d",
+    "plugins/along/CHANGELOG.md": "36eaff530493b77875cde554616170a2968631ec1f2b70e3dc232912095cb07c",
     "plugins/along/LICENSE": "3491932b1e924d2c80b57bf4b855827e78b172ba65feb89e738f3a4035fcb12e",
     "plugins/along/README.md": "ccc532d7f899589af27c73a06bc343c91d8786616a0994154ce45629b5908a3e",
     "plugins/along/skills/along-manage-budget/SKILL.md": "c4cb63ee8739bf66d266b19c9f7003c63eb2f580ef852f1293aa315688754045",
