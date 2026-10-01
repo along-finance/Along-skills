@@ -1,19 +1,18 @@
-# Changelog
+# 0.1.1
 
-## 0.1.2 (unreleased)
+## 0.1.2
 
 - Clarify desktop and CLI support and repository installation.
 - Require completed setup before every other Along workflow.
 - During setup, install or enable available computer-use integration and verify read-only finance-app access before marking Along ready.
-- Explain affiliation, local storage, cloud processing, and data removal.
-- Add installation maintenance, verification status, linked skill examples, and a synthetic reconciliation walkthrough.
 
-## 0.1.1
 
 - Codex-only supported release; other hosts remain contributor experiments.
 - Short setup intake with app, browser and sign-in choices.
 - Optional household label and explained timezone, currency, storage and saved-record defaults.
 - Deferred password-manager choices resolved only when sign-in is needed; existing sessions and explicit choices are reused.
+
+# Changelog
 
 ## 0.1.0
 
